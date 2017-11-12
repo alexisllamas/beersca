@@ -1,0 +1,25 @@
+{
+  "name": "beersca",
+  "version": "1.0.0",
+  "description": "A beer searcher!",
+  "main": "api/index.js",
+  "repository": "https://github.com/alexisllamas/beersca.git",
+  "author": "Alexis Navarro",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.2.1",
+    "nodemon": "^1.12.1"
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel start-api start-web",
+    "start-api": "nodemon api/index.js",
+    "start-web": "cd app && npm start"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.2"
+  }
+}
