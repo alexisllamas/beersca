@@ -1,5 +1,5 @@
 const Router = require('koa-router');
-const api = require('../utils/api');
+const api = require('../../utils/api');
 const registerRoute = app => {
   const router = new Router({
     prefix: '/api/beers'
