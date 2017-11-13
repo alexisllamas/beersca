@@ -1,4 +1,5 @@
-# Beersca
+# Beersca [![Build Status](https://travis-ci.org/alexisllamas/beersca.svg?branch=master)](https://travis-ci.org/alexisllamas/beersca)
+
 
 A really awesome beer searcher
 

@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "8"
+install:
+  - yarn install
+  - cd app/
+  - yarn install
+before_script:
+  - cd ../
+script:
+  - npm run test-api
+  - npm run test-app
