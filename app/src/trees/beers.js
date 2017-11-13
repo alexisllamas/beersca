@@ -13,6 +13,7 @@ const tree = new Baobab({
       },
       get: data => objectByIdToArray(data.beers),
     }),
+    isLoading: false,
   },
 });
 
@@ -23,9 +24,21 @@ export const setBeers = ({ byId, allIds }) => {
 };
 
 export const fetchBeers = async () => {
+  const beersSelector = tree.select('beers');
+  beersSelector.set('isLoading', true);
   const response = await beerRepository.fetchAll();
-  const beers = arrayToObjectById(response.data);
-  setBeers(beers);
+  beersSelector.set('isLoading', false);
+  const beers = arrayToObjectById(response.data || []);
+  setBeers(beers || []);
+};
+
+export const searchBeers = async query => {
+  const beersSelector = tree.select('beers');
+  beersSelector.set('isLoading', true);
+  const response = await beerRepository.search(query);
+  beersSelector.set('isLoading', false);
+  const beers = arrayToObjectById(response.data || []);
+  setBeers(beers || []);
 };
 
 export default tree;

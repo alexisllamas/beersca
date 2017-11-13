@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import BeerSearchForm from '../BeerSearchForm';
 import BeerGrid from '../BeerGrid';
@@ -7,23 +7,20 @@ import beersTree from '../../trees/beers';
 import ConncectTree from '../../helpers/ConnectTree';
 import { fetchBeers } from '../../trees/beers';
 
-class App extends Component {
+class App extends PureComponent {
   componentDidMount() {
     fetchBeers();
-    // setTimeout(() => {
-    //   setBeers();
-    // }, 10000);
   }
 
   render() {
-    const { allBeers } = this.props.beers || { beersData: {} };
+    const { allBeers, isLoading } = this.props.beers;
     return (
       <MainLayout>
         <h2 className="subtitle is-2">Search beers</h2>
         <div className="columns">
-          <div className="column is-two-thirds is-offset-one-fifth">
+          <div className="column">
             <BeerSearchForm />
-            <BeerGrid beers={allBeers} />
+            <BeerGrid beers={allBeers} isLoading={isLoading} />
           </div>
         </div>
       </MainLayout>

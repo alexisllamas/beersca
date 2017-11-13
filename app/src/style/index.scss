@@ -1,14 +1,23 @@
 @import 'node_modules/bulma/bulma.sass';
 body {
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 
   .beers {
     margin-top: 50px;
   }
 
   .beer {
-    margin-right: 1px;
+    border: none;
+    .beer-image {
+      max-height: 300px;
+      max-width: 100px;
+    }
+    .card-content {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
