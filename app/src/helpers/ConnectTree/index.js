@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const ConnectTree = tree => PassedComponent =>
+const ConnectTree = (tree, actions) => PassedComponent =>
   class ConnectTree extends Component {
     state = tree.get();
 
@@ -12,7 +12,7 @@ const ConnectTree = tree => PassedComponent =>
       });
     }
     render() {
-      return <PassedComponent {...this.props} {...this.state} />;
+      return <PassedComponent {...this.props} {...this.state} {...actions} />;
     }
   };
 

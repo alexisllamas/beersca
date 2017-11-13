@@ -15,11 +15,13 @@
     "nodemon": "^1.12.1"
   },
   "scripts": {
-    "start": "npm-run-all --parallel start-api start-web",
+    "start": "npm-run-all --parallel start-api start-app",
     "start-api": "nodemon api/index.js",
-    "start-web": "cd app && npm start",
+    "start-app": "cd app && npm start",
     "linter": "eslint ./app",
-    "test": "mocha ./test/**"
+    "test": "npm-run-all --parallel test-api test-app",
+    "test-api": "mocha ./test/**",
+    "test-app": "cd app && npm test"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

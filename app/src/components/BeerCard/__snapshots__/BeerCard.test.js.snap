@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeerCard component renders without crashing 1`] = `
+<BeerCard
+  abv={10}
+  brewers_tips="tómala fría"
+  description="Cerveza bonita uwu"
+  image_url="img"
+  name="Cerveza de Alexis"
+>
+  <div
+    className="card column beer is-half"
+  >
+    <header
+      className="card-header"
+    >
+      <p
+        className="card-header-title"
+      >
+        Cerveza de Alexis
+      </p>
+      <span
+        className="tag is-danger"
+      >
+        10
+        %
+      </span>
+    </header>
+    <div
+      className="card-content"
+    >
+      <div
+        className="content"
+      >
+        Cerveza bonita uwu
+      </div>
+      <div
+        className="notification"
+      >
+        tómala fría
+      </div>
+      <img
+        alt="the beer"
+        className="beer-image"
+        src="img"
+      />
+    </div>
+  </div>
+</BeerCard>
+`;

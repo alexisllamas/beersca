@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeerGrid component should have beerCards 1`] = `
+<BeerGrid
+  beers={
+    Array [
+      Object {
+        "abv": 10,
+        "brewers_tips": "tómala fría",
+        "description": "Cerveza bonita uwu",
+        "id": 1,
+        "image_url": "img",
+        "name": "Cerveza de Alexis",
+      },
+    ]
+  }
+>
+  <div
+    className="columns is-multiline beers"
+  >
+    <BeerCard
+      abv={10}
+      brewers_tips="tómala fría"
+      description="Cerveza bonita uwu"
+      id={1}
+      image_url="img"
+      key="1"
+      name="Cerveza de Alexis"
+    >
+      <div
+        className="card column beer is-half"
+      >
+        <header
+          className="card-header"
+        >
+          <p
+            className="card-header-title"
+          >
+            Cerveza de Alexis
+          </p>
+          <span
+            className="tag is-danger"
+          >
+            10
+            %
+          </span>
+        </header>
+        <div
+          className="card-content"
+        >
+          <div
+            className="content"
+          >
+            Cerveza bonita uwu
+          </div>
+          <div
+            className="notification"
+          >
+            tómala fría
+          </div>
+          <img
+            alt="the beer"
+            className="beer-image"
+            src="img"
+          />
+        </div>
+      </div>
+    </BeerCard>
+  </div>
+</BeerGrid>
+`;
+
+exports[`BeerGrid component should not have beerCards when empty 1`] = `
+<BeerGrid
+  beers={Array []}
+>
+  <NotBeersFounded>
+    <div
+      className="notification is-danger"
+    >
+      Sorry, we found no beers :(
+    </div>
+  </NotBeersFounded>
+</BeerGrid>
+`;

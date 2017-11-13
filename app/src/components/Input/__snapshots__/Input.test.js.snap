@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component should render correctly 1`] = `
+<Input
+  className="input"
+  labelText="Beer name"
+  name="beerName"
+  placeholder="Text input"
+  type="text"
+>
+  <div
+    className="field"
+  >
+    <label
+      className="label"
+      htmlFor="beerName"
+    >
+      Beer name
+    </label>
+    <div
+      className="control"
+    >
+      <input
+        className="input"
+        id="beerName"
+        name="beerName"
+        placeholder="Text input"
+        type="text"
+      />
+    </div>
+  </div>
+</Input>
+`;

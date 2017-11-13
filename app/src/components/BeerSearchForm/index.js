@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import Input from '../Input';
-import { searchBeers, fetchBeers } from '../../trees/beers';
 
 class BeerSearchForm extends PureComponent {
   state = {
@@ -22,9 +21,11 @@ class BeerSearchForm extends PureComponent {
   };
 
   search = query => {
-    if (!query) return fetchBeers();
+    const { fetchBeers, searchBeers } = this.props;
 
-    searchBeers(query);
+    if (!query) return fetchBeers && fetchBeers();
+
+    searchBeers && searchBeers(query);
   };
 
   render() {

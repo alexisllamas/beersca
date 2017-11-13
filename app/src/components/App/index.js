@@ -5,21 +5,23 @@ import BeerGrid from '../BeerGrid';
 import MainLayout from '../../layouts/main';
 import beersTree from '../../trees/beers';
 import ConncectTree from '../../helpers/ConnectTree';
-import { fetchBeers } from '../../trees/beers';
+import { fetchBeers, searchBeers } from '../../trees/beers';
 
-class App extends PureComponent {
+export class App extends PureComponent {
   componentDidMount() {
-    fetchBeers();
+    const { fetchBeers } = this.props;
+    fetchBeers && fetchBeers();
   }
 
   render() {
+    const { fetchBeers, searchBeers } = this.props;
     const { allBeers, isLoading } = this.props.beers;
     return (
       <MainLayout>
         <h2 className="subtitle is-2">Search beers</h2>
         <div className="columns">
           <div className="column">
-            <BeerSearchForm />
+            <BeerSearchForm fetchBeers={fetchBeers} searchBeers={searchBeers} />
             <BeerGrid beers={allBeers} isLoading={isLoading} />
           </div>
         </div>
@@ -28,4 +30,9 @@ class App extends PureComponent {
   }
 }
 
-export default ConncectTree(beersTree)(App);
+const actionsToProps = {
+  fetchBeers: () => fetchBeers(),
+  searchBeers: query => searchBeers(query),
+};
+
+export default ConncectTree(beersTree, actionsToProps)(App);
