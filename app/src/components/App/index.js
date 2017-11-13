@@ -27,12 +27,12 @@ export class App extends PureComponent {
     if (!beerName) {
       return fetchBeers && fetchBeers();
     }
-    const { beerName: query } = queryString.parse(beerName);
-    this.search(query);
+
+    this.search(beerName);
   }
 
   search = query => {
-    this.changePath(query || '');
+    this.changePath(query);
     const { fetchBeers, searchBeers } = this.props;
 
     if (!query) return fetchBeers && fetchBeers();
