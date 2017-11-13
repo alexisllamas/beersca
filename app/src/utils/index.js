@@ -5,7 +5,7 @@ const headers = {
 };
 
 const axiosInstance = axios.create({
-  baseURL: '/api',
+  baseURL: '/api/v1',
   timeout: 2000,
   headers,
 });

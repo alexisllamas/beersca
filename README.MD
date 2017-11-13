@@ -38,6 +38,12 @@ or you can use
 $ npm start
 ```
 
+### Run test!
+
+```
+$ yarn test
+```
+
 ## Tech Stack
 
 * koa - web middleware
@@ -46,3 +52,4 @@ $ npm start
 * axios - in app api calls
 * SCSS - css preprocessor
 * RCA - React boilerplate
+* mocha & chai - tests

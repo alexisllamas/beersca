@@ -1,5 +1,6 @@
-const { createApi } = require('local-utils');
+const createApi = require('./createApi');
 
 module.exports = {
   createApi,
 };
+s;
