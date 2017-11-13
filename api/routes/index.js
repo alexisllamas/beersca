@@ -1,5 +1,3 @@
 const beers = require('./beers');
 
-module.exports = [
-  beers
-];
+module.exports = [beers];

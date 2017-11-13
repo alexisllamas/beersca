@@ -6470,3 +6470,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif; }
+  body .beers {
+    margin-top: 50px; }
+  body .beer {
+    margin-right: 1px; }

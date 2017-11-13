@@ -1,19 +1,22 @@
 const axios = require('axios');
 
-const baseURL = 'https://api.punkapi.com/v2/';
 const headers = {
   'Content-Type': 'application/json',
 };
 
 const axiosInstance = axios.create({
-  baseURL: 'https://api.punkapi.com/v2/',
+  baseURL: '/api',
   timeout: 2000,
-  headers
+  headers,
 });
 
-const createRequest = method => async (url) => {
+const createRequest = method => async (url, data) => {
   try {
-    const response = await axiosInstance.get(url);
+    const response = await axiosInstance({
+      method,
+      url,
+      data,
+    });
     return {
       success: response.status >= 200 && response.status < 300,
       status: response.status,
@@ -29,11 +32,11 @@ const createRequest = method => async (url) => {
     return {
       success: false,
       data: 'Something gone wrong...',
-    }
+    };
   }
 };
 
-const api = {
+export const api = {
   get: createRequest('GET'),
   post: createRequest('POST'),
   put: createRequest('PUT'),
@@ -41,4 +44,9 @@ const api = {
   request: (url, method = 'GET') => createRequest(method)(url),
 };
 
-module.exports = api;
+export const arrayToObjectById = array => ({
+  byId: array.reduce((byId, object) => ({ ...byId, [object.id]: object }), {}),
+  allIds: array.map(object => object.id),
+});
+
+export const objectByIdToArray = object => Object.values(object);

@@ -6,7 +6,7 @@ import Aux from '../../helpers/Aux';
 const mainLayout = ({ children }) => (
   <Aux>
     <Header />
-    <section class="section">
+    <section className="section">
       <div className="container">{children}</div>
     </section>
     <Footer />
