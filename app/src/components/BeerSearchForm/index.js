@@ -15,17 +15,9 @@ class BeerSearchForm extends PureComponent {
 
   createTimer = query => {
     const timer = setTimeout(() => {
-      this.search(query);
+      this.props.search(query);
     }, 1000);
     this.setState({ timer });
-  };
-
-  search = query => {
-    const { fetchBeers, searchBeers } = this.props;
-
-    if (!query) return fetchBeers && fetchBeers();
-
-    searchBeers && searchBeers(query);
   };
 
   render() {
@@ -36,8 +28,10 @@ class BeerSearchForm extends PureComponent {
           className="input"
           name="beerName"
           type="text"
-          placeholder="Text input"
+          placeholder="Search your beer..."
+          defaultValue={this.props.defaultValue}
           onChange={this.handleChange}
+          autoFocus
         />
       </form>
     );
