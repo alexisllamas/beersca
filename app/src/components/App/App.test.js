@@ -12,7 +12,15 @@ describe('App component', () => {
       errors: [],
       allBeers: [],
     };
-    const wrapper = mount(<App beers={beers} fetchBeers={fetchBeers} />);
+    const history = {
+      location: {
+        query: '',
+      },
+    };
+
+    const wrapper = mount(
+      <App beers={beers} fetchBeers={fetchBeers} history={history} />,
+    );
     expect(fetchBeers).toBeCalled();
     expect(wrapper).toContainReact(
       <h2 className="subtitle is-2">Search beers</h2>,

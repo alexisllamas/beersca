@@ -7,11 +7,12 @@ exports[`BeerSearchForm component should have render correctly 1`] = `
 >
   <form>
     <Input
+      autoFocus={true}
       className="input"
       labelText="Beer name"
       name="beerName"
       onChange={[Function]}
-      placeholder="Text input"
+      placeholder="Search your beer..."
       type="text"
     >
       <div
@@ -27,11 +28,12 @@ exports[`BeerSearchForm component should have render correctly 1`] = `
           className="control"
         >
           <input
+            autoFocus={true}
             className="input"
             id="beerName"
             name="beerName"
             onChange={[Function]}
-            placeholder="Text input"
+            placeholder="Search your beer..."
             type="text"
           />
         </div>
